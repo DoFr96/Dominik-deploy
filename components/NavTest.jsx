@@ -11,6 +11,9 @@ import { GoPeople } from "react-icons/go";
 import { PiSignIn } from "react-icons/pi";
 import { RiAccountPinBoxLine } from "react-icons/ri";
 import { socialMedia } from "@/constants";
+
+import { motion } from "framer-motion";
+
 const NavTest = () => {
   const [toggle, setToggle] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +76,7 @@ const NavTest = () => {
         <div
           className={`${toggle ? "hidden" : "flex"} ${
             isOpen ? "overflow-y-hidden" : ""
-          } bg-secondary  absolute  top-0 right-0 w-screen h-dvh   z-2`}
+          } bg-secondary  absolute  top-0 right-0 w-screen h-lvh   z-2`}
         >
           <div className="flex flex-col flex-1 justify-center items-center gap-5 font-medium text-[22px] ">
             <div className="flex flex-col justify-between  h-[50%] gap-3 font-semibold text-white transition-all duration-200 ease-in-out ">

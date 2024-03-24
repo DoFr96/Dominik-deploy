@@ -1,5 +1,13 @@
 import { FaCheck } from "react-icons/fa6";
 import { LiaStarSolid } from "react-icons/lia";
+
+import { IoHomeOutline } from "react-icons/io5";
+import { GrCatalog } from "react-icons/gr";
+import { IoPricetagOutline } from "react-icons/io5";
+import { GoPeople } from "react-icons/go";
+import { PiSignIn } from "react-icons/pi";
+import { RiAccountPinBoxLine } from "react-icons/ri";
+
 export const programs = [
   {
     id: "cardio",
@@ -187,4 +195,16 @@ export const socialMedia = [
     icon: "/icons/twitter.svg",
     link: "https://www.twitter.com/",
   },
+];
+
+export const navLinks = [
+  { title: "Home", href: "/", icon: <IoHomeOutline /> },
+  { title: "Program", href: "#program", icon: <GrCatalog /> },
+  { title: "Pricing", href: "#pricing", icon: <IoPricetagOutline /> },
+  { title: "Contact", href: "#contact", icon: <GoPeople /> },
+];
+
+export const navLinksAccount = [
+  { title: "Login", href: "/login", icon: <PiSignIn /> },
+  { title: "Register", href: "/register", icon: <RiAccountPinBoxLine /> },
 ];

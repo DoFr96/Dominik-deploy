@@ -31,8 +31,8 @@ const Program = () => {
     >
       <div className="flex sm:flex-row flex-col  sm:justify-between justify-center items-center">
         <div className="flex flex-1 ">
-          <h3 className="sm:text-[50px] text-[39px]  font-medium w-full z-10 sm:mb-0 mb-5">
-            Explore our program
+          <h3 className="sm:text-[50px] text-[42px]  font-medium w-full z-10 sm:mb-0 mb-5">
+            Our Program
           </h3>
           <div className="absolute left-0 right-0 w-full overflow-x-clip ">
             <h3 className="sm:text-[150px] text-[130px] overflow-x-clip  absolute font-bold z-1 sm:-left-10 sm:-top-[118px] -left-[33px] -top-[100px]  opacity-50 ">

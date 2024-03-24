@@ -41,7 +41,7 @@ const Nav = () => {
           </Link>
           <Link
             href="/register"
-            className="bg-secondary text-white px-6 py-2 rounded-xl"
+            className="bg-secondary text-white px-6 py-2 rounded-xl "
           >
             Register
           </Link>
