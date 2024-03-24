@@ -3,7 +3,10 @@ import { contact } from "@/constants";
 import Image from "next/image";
 const Contact = () => {
   return (
-    <section id="contact" className="  bg-secondary w-full sm:p-16 p-6 mt-20 ">
+    <section
+      id="contact"
+      className="  bg-secondary w-full sm:p-16 p-6 mt-20 rounded-lg "
+    >
       <div className="sm:max-w-[1280px] mx-auto  overflow-hidden flex flex-col">
         <div className="flex sm:flex-row flex-col justify-center items-start">
           <div className="flex flex-col w-full sm:mr-5 mr-0 sm:mb-0 mb-[60px] sm:mt-0 mt-10">

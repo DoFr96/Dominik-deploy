@@ -11,21 +11,14 @@ import Contact from "@/components/Contact";
 const Home = () => {
   return (
     <div>
-      <div className="sm:max-w-[1280px] mx-auto  overflow-hidden">
-        <div className="w-full sm:px-16 px-6">
-          <Hero />
-          <Program />
-          <Transform />
-          <Shoes />
-          <JoinUs />
-          <Packages />
-          <Testimonials />
-        </div>
-      </div>
-
-      <div>
-        <Contact />
-      </div>
+      <Hero />
+      <Program />
+      <Transform />
+      <Shoes />
+      <JoinUs />
+      <Packages />
+      <Testimonials />
+      <Contact />
     </div>
   );
 };

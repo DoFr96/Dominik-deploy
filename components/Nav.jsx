@@ -11,9 +11,9 @@ import { GoPeople } from "react-icons/go";
 import { PiSignIn } from "react-icons/pi";
 import { RiAccountPinBoxLine } from "react-icons/ri";
 const Nav = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   return (
-    <nav className="sm:max-w-[1280px] mx-auto  overflow-hidden sm:px-16 px-6 pt-2 flex flex-row justify-between items-center">
+    <nav className=" pt-2 flex flex-row justify-between items-center">
       <div>
         <Image src="/images/logo.png" alt="logo" width={50} height={50} />
       </div>

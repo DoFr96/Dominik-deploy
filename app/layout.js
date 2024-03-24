@@ -22,8 +22,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${urbanist.className}`}>
-        <main className={`  `}>
-          <div className="">
+        <main className={` sm:max-w-[1280px] mx-auto  overflow-hidden `}>
+          <div className="w-full sm:px-16 px-6">
             <Nav />
             {children}
             <Footer />
