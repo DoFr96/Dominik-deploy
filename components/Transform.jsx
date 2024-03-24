@@ -7,7 +7,7 @@ const Transform = () => {
     <section className="flex sm:flex-row  flex-col-reverse justify-between items-center sm:py-16 py-6 sm:gap-20 sm:mb-0 mb-10">
       <div className="flex flex-1 justify-center items-start ">
         <Image
-          src={"/images/transform.png"}
+          src={"/images/transformation.png"}
           alt="excercise"
           width={0}
           height={0}

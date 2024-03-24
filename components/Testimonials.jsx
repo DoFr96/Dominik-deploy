@@ -7,7 +7,7 @@ const Testimonials = () => {
         <h3 className="text-[30px] font-semibold w-full z-10">
           What my clients say about me?
         </h3>
-        <div className="absolute left-0 right-0 w-full">
+        <div className="absolute left-0 right-0 overflow-x-clip w-full">
           <h3 className="sm:text-[150px] text-[130px] absolute font-bold z-1 sm:-left-[25px] sm:-top-[118px] -left-[20px] -top-[100px]  opacity-50 ">
             stimonial
           </h3>
