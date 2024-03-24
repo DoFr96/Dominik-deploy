@@ -10,7 +10,8 @@ import { IoPricetagOutline } from "react-icons/io5";
 import { GoPeople } from "react-icons/go";
 import { PiSignIn } from "react-icons/pi";
 import { RiAccountPinBoxLine } from "react-icons/ri";
-const Nav = () => {
+import { socialMedia } from "@/constants";
+const NavTest = () => {
   const [toggle, setToggle] = useState(true);
   return (
     <nav className=" pt-2 flex flex-row justify-between items-center">
@@ -63,10 +64,10 @@ const Nav = () => {
         <div
           className={`${
             toggle ? "hidden" : "flex"
-          } bg-secondary absolute  top-0 right-0 w-full pt-10  z-1`}
+          } bg-secondary absolute  top-0 right-0 w-screen h-dvh   z-2`}
         >
-          <div className="flex flex-col flex-1 justify-center items-center gap-5 font-medium text-[18px] min-w-[150px] pb-10">
-            <div className="flex flex-col gap-3 font-semibold text-white  ">
+          <div className="flex flex-col flex-1 justify-center items-center gap-5 font-medium text-[22px] ">
+            <div className="flex flex-col justify-between  h-[50%] gap-3 font-semibold text-white  ">
               <Link
                 href="/"
                 className="hover:text-dimWhite flex flex-row justify-start items-center gap-2"
@@ -91,9 +92,10 @@ const Nav = () => {
               >
                 <GoPeople /> Community
               </Link>
+              <hr className="" />
               <Link
                 href="/login"
-                className="hover:text-dimWhite flex flex-row justify-start items-center gap-2 border-t-2 pt-5"
+                className="hover:text-dimWhite flex flex-row justify-start items-center gap-2 "
               >
                 <PiSignIn /> Login
               </Link>
@@ -103,6 +105,22 @@ const Nav = () => {
               >
                 <RiAccountPinBoxLine /> Register
               </Link>
+              <hr className="" />
+              <div className="flex flex-row md:mt-0 mt-6">
+                {socialMedia.map((social, index) => (
+                  <Image
+                    key={social.id}
+                    src={social.icon}
+                    alt={social.id}
+                    width={25}
+                    height={25}
+                    className={` object-contain cursor-pointer hover:opacity-70 ${
+                      index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+                    }`}
+                    onClick={() => window.open(social.link)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -111,4 +129,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default NavTest;
