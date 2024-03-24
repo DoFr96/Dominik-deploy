@@ -3,6 +3,62 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+
+const containerVars = {
+  initial: {
+    transition: {
+      staggerChildren: 0.09,
+      staggerDirection: -1,
+    },
+  },
+  animate: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.09,
+      staggerDirection: 1,
+    },
+  },
+};
+
+const mobileLinkVars = {
+  initial: {
+    opacity: 0,
+    y: "30vh",
+    transition: {
+      duration: 0.5,
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
+};
+
+const mobileLinkVarsImage = {
+  initial: {
+    opacity: 0,
+    y: "30vh",
+    transition: {
+      duration: 0.5,
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.5,
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
+};
 
 const Hero = () => {
   const [play, setPlay] = useState(false);
@@ -11,11 +67,18 @@ const Hero = () => {
     ? `https://www.youtube.com/embed/vtIQcIMr7iM?autoplay=1`
     : `https://www.youtube.com/embed/vtIQcIMr7iM`;
   return (
-    <section
+    <motion.section
+      variants={containerVars}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
       id="home"
       className=" flex sm:flex-row flex-col md:items-center md:justify-between xs:items-start xs:justify-center items-start justify-center sm:my-16 my-6 "
     >
-      <div className="flex flex-col flex-1 justify-center sm:items-start xs:items-center items-start sm:mr-10 mr-0 sm:mb-0 mb-10 w-full">
+      <motion.div
+        variants={mobileLinkVars}
+        className="flex flex-col flex-1 justify-center sm:items-start xs:items-center items-start sm:mr-10 mr-0 sm:mb-0 mb-10 w-full"
+      >
         <h1 className="sm:text-[60px] text-[52px] sm:leading-[70px]  leading-[57px] font-semibold mb-5">
           Andrej Rupnik
         </h1>
@@ -76,8 +139,11 @@ const Hero = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div className="flex flex-1 sm:justify-end justify-center w-full sm:mb-0 mb-10">
+      </motion.div>
+      <motion.div
+        variants={mobileLinkVarsImage}
+        className="flex flex-1 sm:justify-end justify-center w-full sm:mb-0 mb-10"
+      >
         <Image
           src={"/images/andrej.png"}
           width={450}
@@ -98,8 +164,8 @@ const Hero = () => {
             Andrej
           </h3>
         </div>*/}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

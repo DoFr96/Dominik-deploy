@@ -10,6 +10,42 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { programs } from "../constants";
+import { AnimatePresence, motion } from "framer-motion";
+
+const containerVars = {
+  initial: {
+    transition: {
+      staggerChildren: 0.09,
+      staggerDirection: -1,
+    },
+  },
+  animate: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.09,
+      staggerDirection: 1,
+    },
+  },
+};
+
+const mobileLinkVars = {
+  initial: {
+    opacity: 0,
+    y: "30vh",
+    transition: {
+      duration: 0.5,
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
+};
 
 const Program = () => {
   const slider = React.useRef(null);
@@ -25,7 +61,7 @@ const Program = () => {
     variableWidth: true,
   };
   return (
-    <section
+    <motion.section
       id="program"
       className="sm:py-16 py-6 flex flex-col sm:mt-0 mt-20  "
     >
@@ -88,7 +124,7 @@ const Program = () => {
           })}
         </Slider>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

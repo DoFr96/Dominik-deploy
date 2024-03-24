@@ -43,7 +43,7 @@ const containerVars = {
 const mobileLinkVars = {
   initial: {
     opacity: 0,
-    y: 100,
+    y: "30vh",
     transition: {
       duration: 0.5,
       ease: [0.37, 0, 0.63, 1],
