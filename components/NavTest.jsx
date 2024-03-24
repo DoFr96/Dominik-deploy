@@ -13,24 +13,25 @@ import { RiAccountPinBoxLine } from "react-icons/ri";
 import { socialMedia } from "@/constants";
 const NavTest = () => {
   const [toggle, setToggle] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className=" pt-2 flex flex-row justify-between items-center">
+    <nav className=" pt-2 flex flex-row justify-between items-center ">
       <div>
         <Image src="/images/logo.png" alt="logo" width={50} height={50} />
       </div>
       <div className="sm:flex hidden flex-row flex-1 justify-end items-center gap-20 font-medium text-[18px]">
         <div className="flex gap-4  ">
-          <Link href="/" className="hover:text-black/30">
+          <Link href="#" className="hover:text-black/30">
             Home
           </Link>
-          <Link href="/program" className="hover:text-black/30">
+          <Link href="#program" className="hover:text-black/30">
             Program
           </Link>
-          <Link href="/pricing" className="hover:text-black/30">
+          <Link href="#pricing" className="hover:text-black/30">
             Pricing
           </Link>
-          <Link href="/community" className="hover:text-black/30">
-            Community
+          <Link href="/#contact" className="hover:text-black/30">
+            Contact
           </Link>
         </div>
         <div className="flex gap-4">
@@ -49,25 +50,33 @@ const NavTest = () => {
         </div>
       </div>
       {/* here is menu for mobile phone */}
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div
+        className={`${
+          isOpen ? "overflow-y-hidden" : ""
+        } sm:hidden flex flex-1 justify-end items-center`}
+      >
         {toggle ? (
           <HiBars3BottomRight
             className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack  transition-all  z-10 "
-            onClick={() => setToggle(!toggle)}
+            onClick={() => {
+              setToggle(!toggle), setIsOpen(!isOpen);
+            }}
           />
         ) : (
           <IoCloseOutline
             className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack transition-all  z-10 "
-            onClick={() => setToggle(!toggle)}
+            onClick={() => {
+              setToggle(!toggle), setIsOpen(!isOpen);
+            }}
           />
         )}
         <div
-          className={`${
-            toggle ? "hidden" : "flex"
-          } bg-secondary absolute  top-0 right-0 w-screen h-dvh   z-2`}
+          className={`${toggle ? "hidden" : "flex"} ${
+            isOpen ? "overflow-y-hidden" : ""
+          } bg-secondary  absolute  top-0 right-0 w-screen h-dvh   z-2`}
         >
           <div className="flex flex-col flex-1 justify-center items-center gap-5 font-medium text-[22px] ">
-            <div className="flex flex-col justify-between  h-[50%] gap-3 font-semibold text-white  ">
+            <div className="flex flex-col justify-between  h-[50%] gap-3 font-semibold text-white transition-all duration-200 ease-in-out ">
               <Link
                 href="/"
                 className="hover:text-dimWhite flex flex-row justify-start items-center gap-2"
@@ -90,7 +99,7 @@ const NavTest = () => {
                 href="/community"
                 className="hover:text-dimWhite flex flex-row justify-start items-center gap-2"
               >
-                <GoPeople /> Community
+                <GoPeople /> Contact
               </Link>
               <hr className="" />
               <Link

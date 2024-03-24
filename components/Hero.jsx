@@ -11,7 +11,10 @@ const Hero = () => {
     ? `https://www.youtube.com/embed/vtIQcIMr7iM?autoplay=1`
     : `https://www.youtube.com/embed/vtIQcIMr7iM`;
   return (
-    <section className=" flex sm:flex-row flex-col md:items-center md:justify-between xs:items-start xs:justify-center items-start justify-center sm:my-16 my-6 ">
+    <section
+      id="home"
+      className=" flex sm:flex-row flex-col md:items-center md:justify-between xs:items-start xs:justify-center items-start justify-center sm:my-16 my-6 "
+    >
       <div className="flex flex-col flex-1 justify-center sm:items-start xs:items-center items-start sm:mr-10 mr-0 sm:mb-0 mb-10 w-full">
         <h1 className="sm:text-[60px] text-[52px] sm:leading-[70px]  leading-[57px] font-semibold mb-5">
           Andrej Rupnik

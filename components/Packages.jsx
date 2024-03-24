@@ -2,7 +2,7 @@ import React from "react";
 import { packages } from "@/constants";
 const Packages = () => {
   return (
-    <section className="sm:py-16 py-6">
+    <section id="pricing" className="sm:py-16 py-6">
       <div className="flex flex-col justify-center items-center">
         <p className="text-secondary mb-1">Pricing</p>
         <h4 className="text-[25px] font-semibold mb-5">Our List Packages</h4>
