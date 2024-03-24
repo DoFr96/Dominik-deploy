@@ -62,10 +62,17 @@ const Program = () => {
   };
   return (
     <motion.section
+      variants={containerVars}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
       id="program"
       className="sm:py-16 py-6 flex flex-col sm:mt-0 mt-20  "
     >
-      <div className="flex sm:flex-row flex-col  sm:justify-between justify-center items-center">
+      <motion.div
+        variants={mobileLinkVars}
+        className="flex sm:flex-row flex-col  sm:justify-between justify-center items-center"
+      >
         <div className="flex flex-1 ">
           <h3 className="sm:text-[50px] text-[42px]  font-medium w-full z-10 sm:mb-0 mb-5">
             Our Program
@@ -95,11 +102,14 @@ const Program = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Slider section */}
 
-      <div className="sm:w-[80%] w-[100%] mt-10 mx-auto">
+      <motion.div
+        variants={mobileLinkVars}
+        className="sm:w-[80%] w-[100%] mt-10 mx-auto"
+      >
         <Slider {...settings} ref={slider}>
           {programs.map((program, idx) => {
             const { title, content, id, icon } = program;
@@ -123,7 +133,7 @@ const Program = () => {
             );
           })}
         </Slider>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

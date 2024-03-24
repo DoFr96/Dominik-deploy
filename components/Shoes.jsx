@@ -1,5 +1,33 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+
+import { AnimatePresence, motion } from "framer-motion";
+const containerVars = {
+  initial: {
+    opacity: 0,
+    y: "30vh",
+    transition: {
+      staggerChildren: 0.09,
+      staggerDirection: -1,
+      duration: 0.5,
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.09,
+      staggerDirection: 1,
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
+};
+
 const Shoes = () => {
   return (
     <section className="sm:py-16 py-6 max-w-[1480px]">
@@ -33,8 +61,14 @@ const Shoes = () => {
           className="z-10 hover:opacity-90"
         />
       </div>
-      <div className="w-full sm:hidden flex flex-col justify-center items-center my-5 group transition-all">
-        <div className="flex flex-col justify-end items-center group">
+      <div className="w-full sm:hidden flex flex-col justify-center items-center my-5 group ">
+        <motion.div
+          variants={containerVars}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="flex flex-col justify-end items-center group"
+        >
           <Image
             src={"/images/tenisica0.png"}
             width={200}
@@ -45,7 +79,7 @@ const Shoes = () => {
           <p className="invisible group-hover:visible text-transparent bg-clip-text bg-gradient-to-r from-[#ef9e78] to-[#f84808] font-semibold ">
             Nike Pegasus
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

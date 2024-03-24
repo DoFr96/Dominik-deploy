@@ -1,5 +1,53 @@
+"use client";
 import React from "react";
 import { packages } from "@/constants";
+import { AnimatePresence, motion } from "framer-motion";
+const containerVars = {
+  initial: {
+    opacity: 0,
+    y: "30vh",
+    transition: {
+      staggerChildren: 0.09,
+      staggerDirection: -1,
+      duration: 0.5,
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.09,
+      staggerDirection: 1,
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
+};
+
+const mobileLinkVars = {
+  initial: {
+    opacity: 0,
+    y: "30vh",
+    transition: {
+      duration: 0.5,
+      ease: [0.37, 0, 0.63, 1],
+    },
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      delay: 1,
+      ease: [0, 0.55, 0.45, 1],
+      duration: 0.7,
+    },
+  },
+};
+
 const Packages = () => {
   return (
     <section id="pricing" className="sm:py-16 py-6">
@@ -17,13 +65,17 @@ const Packages = () => {
         {packages.map((item) => {
           const { id, title, icon, price, duration, options, offer } = item;
           return (
-            <div
+            <motion.div
+              variants={containerVars}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
               key={id}
               className={` relative overflow-hidden ${
                 id === "mid-packages"
                   ? "bg-secondary text-white hover:bg-secondary/90 "
                   : "bg-dimBlack text-secondary hover:bg-dimBlack/90"
-              } flex flex-col bg-dimBlack rounded-lg  p-4  hover:shadow-md hover:shadow-black/30 transition-all`}
+              } flex flex-col bg-dimBlack rounded-lg  p-4  hover:shadow-md hover:shadow-black/30 `}
             >
               <h5
                 className={` ${
@@ -63,7 +115,7 @@ const Packages = () => {
                   );
                 })}
               </ul>
-            </div>
+            </motion.div>
           );
         })}
       </div>
