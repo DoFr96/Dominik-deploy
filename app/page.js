@@ -1,8 +1,8 @@
-import Hero from "@/components/Hero";
-import Program from "@/components/Program";
+import Hero2 from "@/components/Hero2";
+import Program3 from "@/components/Program3";
 import React from "react";
 import Test5 from "@/components/Test5";
-import Transform from "@/components/Transform";
+import Transform2 from "@/components/Transform2";
 import JoinUs from "@/components/JoinUs";
 import Packages from "@/components/Packages";
 import Testimonials from "@/components/Testimonials";
@@ -11,9 +11,9 @@ import Contact from "@/components/Contact";
 const Home = () => {
   return (
     <div>
-      <Hero />
-      <Program />
-      <Transform />
+      <Hero2 />
+      <Program3 />
+      <Transform2 />
       <Shoes />
       <JoinUs />
       <Packages />

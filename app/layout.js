@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import NavTest2 from "@/components/NavTest2";
 import Footer from "@/components/Footer";
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["100", "400", "500", "700"],

@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 button.main_btn {
- @apply bg-secondary text-white px-6 py-2 rounded-xl font-semibold text-[20px] hover:shadow-md active:bg-secondary/90 hover:shadow-black/30 transition-all
+ @apply bg-secondary text-white px-6 py-2 rounded-xl font-semibold text-[18px] hover:shadow-md active:bg-secondary/90 hover:shadow-black/30 transition-all
 }
 
 

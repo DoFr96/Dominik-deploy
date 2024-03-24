@@ -156,10 +156,14 @@ const NavTest2 = () => {
                   {navLinks.map((link, index) => {
                     const { title, href, icon } = link;
                     return (
-                      <motion.div variants={mobileLinkVars} key={index}>
+                      <motion.div
+                        variants={mobileLinkVars}
+                        key={index}
+                        className="overflow-hidden"
+                      >
                         <Link
                           href={href}
-                          className="hover:text-dimWhite flex flex-row justify-start items-center gap-2"
+                          className="hover:text-dimWhite  flex flex-row justify-start items-center gap-2"
                         >
                           {" "}
                           <span>{icon}</span>
@@ -173,7 +177,11 @@ const NavTest2 = () => {
                   {navLinksAccount.map((link, index) => {
                     const { title, href, icon } = link;
                     return (
-                      <motion.div variants={mobileLinkVars} key={index}>
+                      <motion.div
+                        variants={mobileLinkVars}
+                        key={index}
+                        className="overflow-hidden"
+                      >
                         <Link
                           href={href}
                           className="hover:text-dimWhite flex flex-row justify-start items-center gap-2"
@@ -188,7 +196,11 @@ const NavTest2 = () => {
                   <motion.hr variants={mobileLinkVars} className="" />
                   <div className="flex flex-row md:mt-0 mt-6">
                     {socialMedia.map((social, index) => (
-                      <motion.div key={index} variants={mobileLinkVars}>
+                      <motion.div
+                        key={index}
+                        variants={mobileLinkVars}
+                        className="overflow-hidden"
+                      >
                         <Image
                           key={social.id}
                           src={social.icon}
