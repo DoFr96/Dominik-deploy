@@ -97,7 +97,7 @@ const Hero2 = () => {
       <div className="flex flex-1 sm:justify-end justify-center w-full sm:mb-0 mb-10">
         <Reveal>
           <Image
-            src={"/images/rupalosslysmaller.webp"}
+            src={"/images/rupalosslesssmaller.webp"}
             width={350}
             height={350}
             alt="personal trainer"
