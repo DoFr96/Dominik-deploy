@@ -40,7 +40,7 @@ const Hero2 = () => {
 
         <div className="flex flex-row justify-start items-center gap-5">
           <Reveal>
-            <button className="main_btn font-medium" href="/">
+            <button className="main_btn " href="/">
               Start Training
             </button>
           </Reveal>
@@ -97,9 +97,9 @@ const Hero2 = () => {
       <div className="flex flex-1 sm:justify-end justify-center w-full sm:mb-0 mb-10">
         <Reveal>
           <Image
-            src={"/images/andrej.png"}
-            width={450}
-            height={450}
+            src={"/images/rupalosslysmaller.webp"}
+            width={350}
+            height={350}
             alt="personal trainer"
             className=""
           />

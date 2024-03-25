@@ -10,7 +10,7 @@ const Transform2 = () => {
       <div className="flex flex-1 justify-center items-start ">
         <Reveal>
           <Image
-            src={"/images/transformation.png"}
+            src={"/images/transformlossy2brightness.webp"}
             alt="excercise"
             width={0}
             height={0}

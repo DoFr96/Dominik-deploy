@@ -46,8 +46,8 @@ const Shoes = () => {
         </Reveal>
       </div>
       <div className="w-full sm:hidden flex flex-col justify-center items-center my-5 group ">
-        <div className="flex flex-col justify-end items-center group">
-          <Reveal>
+        <Reveal>
+          <div className="flex flex-col justify-end items-center group">
             <Image
               src={"/images/tenisica0.png"}
               width={200}
@@ -58,8 +58,8 @@ const Shoes = () => {
             <p className="invisible group-hover:visible text-transparent bg-clip-text bg-gradient-to-r from-[#ef9e78] to-[#f84808] font-semibold ">
               Nike Pegasus
             </p>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
