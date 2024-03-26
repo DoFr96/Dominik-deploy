@@ -20,7 +20,7 @@ import {
 } from "framer-motion";
 import { navLinksAccount } from "@/constants";
 import { Reveal } from "./Reveal";
-const NavTest3 = () => {
+const NavTest4 = () => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -84,6 +84,21 @@ const NavTest3 = () => {
       },
     },
   };
+
+  {
+    /*
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+*/
+  }
 
   return (
     <nav className=" pt-2 flex flex-row justify-between items-center ">
@@ -235,4 +250,4 @@ const NavTest3 = () => {
   );
 };
 
-export default NavTest3;
+export default NavTest4;

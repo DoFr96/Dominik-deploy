@@ -127,16 +127,19 @@ const Hero2 = () => {
                     <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                       2020
                     </time>
-
-                    <div class="text-xl font-bold text-slate-900">
-                      Miketa sport centar, Rijeka
-                    </div>
+                    <Reveal>
+                      <div class="text-xl font-bold text-slate-900">
+                        Miketa sport centar, Rijeka
+                      </div>
+                    </Reveal>
                   </div>
 
                   {/*  <!-- Content --> */}
-                  <div class="text-slate-500">
-                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
-                  </div>
+                  <Reveal>
+                    <div class="text-slate-500">
+                      Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                    </div>
+                  </Reveal>
                 </div>
 
                 <div class="relative pl-8 sm:pl-32 py-3 group">
@@ -144,13 +147,17 @@ const Hero2 = () => {
                     <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                       2021
                     </time>
-                    <div class="text-xl font-bold text-slate-900">
-                      NK Opatija
+                    <Reveal>
+                      <div class="text-xl font-bold text-slate-900">
+                        NK Opatija
+                      </div>
+                    </Reveal>
+                  </div>
+                  <Reveal>
+                    <div class="text-slate-500">
+                      Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                     </div>
-                  </div>
-                  <div class="text-slate-500">
-                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
-                  </div>
+                  </Reveal>
                 </div>
 
                 <div class="relative pl-8 sm:pl-32 py-3 group">
@@ -158,13 +165,17 @@ const Hero2 = () => {
                     <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                       2022
                     </time>
-                    <div class="text-xl font-bold text-slate-900">
-                      HNK Rijeka
+                    <Reveal>
+                      <div class="text-xl font-bold text-slate-900">
+                        HNK Rijeka
+                      </div>
+                    </Reveal>
+                  </div>
+                  <Reveal>
+                    <div class="text-slate-500">
+                      Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                     </div>
-                  </div>
-                  <div class="text-slate-500">
-                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
-                  </div>
+                  </Reveal>
                 </div>
 
                 <div class="relative pl-8 sm:pl-32 py-3 group">
@@ -172,13 +183,17 @@ const Hero2 = () => {
                     <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                       2023
                     </time>
-                    <div class="text-xl font-bold text-secondary">
-                      Orladno fit gym, Zagreb{" "}
+                    <Reveal>
+                      <div class="text-xl font-bold text-secondary">
+                        Orladno fit gym, Zagreb{" "}
+                      </div>
+                    </Reveal>
+                  </div>
+                  <Reveal>
+                    <div class="text-slate-500">
+                      Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                     </div>
-                  </div>
-                  <div class="text-slate-500">
-                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             </Reveal>
@@ -228,70 +243,95 @@ const Hero2 = () => {
           </div>
         </Reveal>
         {isChecked && (
-          <Reveal>
-            <div className="my-10 ">
-              {/*<!-- Item #1 --> */}
+          <div className="my-10 ">
+            {/*<!-- Item #1 --> */}
 
-              <div class="relative pl-8 sm:pl-32 py-3 group">
-                {/* <!-- Purple label -->  */}
+            <div class="relative pl-8 sm:pl-32 py-3 group">
+              {/* <!-- Purple label -->  */}
 
-                {/*  <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) --> */}
+              {/*  <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) --> */}
 
-                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+              <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                <Reveal>
                   <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                     2020
                   </time>
+                </Reveal>
 
+                <Reveal>
                   <div class="text-xl font-bold text-slate-900">
                     Miketa sport centar, Rijeka
                   </div>
-                </div>
+                </Reveal>
+              </div>
 
-                {/*  <!-- Content --> */}
+              {/*  <!-- Content --> */}
+              <Reveal>
                 <div class="text-slate-500">
                   Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                 </div>
-              </div>
+              </Reveal>
+            </div>
 
-              <div class="relative pl-8 sm:pl-32 py-3 group">
-                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+            <div class="relative pl-8 sm:pl-32 py-3 group">
+              <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                <Reveal>
                   <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                     2021
                   </time>
+                </Reveal>
+
+                <Reveal>
                   <div class="text-xl font-bold text-slate-900">NK Opatija</div>
-                </div>
+                </Reveal>
+              </div>
+              <Reveal>
                 <div class="text-slate-500">
                   Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                 </div>
-              </div>
+              </Reveal>
+            </div>
 
-              <div class="relative pl-8 sm:pl-32 py-3 group">
-                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+            <div class="relative pl-8 sm:pl-32 py-3 group">
+              <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                <Reveal>
                   <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                     2022
                   </time>
+                </Reveal>
+
+                <Reveal>
                   <div class="text-xl font-bold text-slate-900">HNK Rijeka</div>
-                </div>
+                </Reveal>
+              </div>
+              <Reveal>
                 <div class="text-slate-500">
                   Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                 </div>
-              </div>
+              </Reveal>
+            </div>
 
-              <div class="relative pl-8 sm:pl-32 py-3 group">
-                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+            <div class="relative pl-8 sm:pl-32 py-3 group">
+              <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                <Reveal>
                   <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
                     2023
                   </time>
+                </Reveal>
+
+                <Reveal>
                   <div class="text-xl font-bold text-secondary">
                     Orladno fit gym, Zagreb{" "}
                   </div>
-                </div>
+                </Reveal>
+              </div>
+              <Reveal>
                 <div class="text-slate-500">
                   Priprema sportasa, zagrijavanje, oporavak od ozljeda.
                 </div>
-              </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         )}
       </div>
     </section>
