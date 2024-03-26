@@ -45,7 +45,9 @@ const Shoes = () => {
           />
         </Reveal>
       </div>
-      <div className="w-full sm:hidden flex flex-col justify-center items-center my-5 group ">
+      {/*
+      
+       <div className="w-full sm:hidden flex flex-col justify-center items-center my-5 group ">
         <Reveal>
           <div className="flex flex-col justify-end items-center group">
             <Image
@@ -61,6 +63,7 @@ const Shoes = () => {
           </div>
         </Reveal>
       </div>
+      */}
     </section>
   );
 };

@@ -88,7 +88,7 @@ const Hero2 = () => {
         <div className="md:block hidden">
           <Reveal>
             <div className="flex flex-row justify-start items-center mt-10">
-              <h3 className="font-semibold text-2xl">Employment history</h3>
+              <h3 className="font-semibold text-[20px]">Employment history</h3>
               <div className="ml-5">
                 <label className="flex cursor-pointer select-none items-center">
                   <div className="relative">
@@ -202,7 +202,7 @@ const Hero2 = () => {
       <div className="md:hidden block w-full">
         <Reveal>
           <div className="flex flex-row justify-center items-center my-10 ">
-            <h3 className="font-semibold text-2xl">Employment history</h3>
+            <h3 className="font-semibold text-2xl ">Employment history</h3>
             <div className="ml-5">
               <label className="flex cursor-pointer select-none items-center">
                 <div className="relative">
