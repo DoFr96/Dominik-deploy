@@ -6,6 +6,12 @@ import Image from "next/image";
 import { Reveal } from "./Reveal";
 
 const Hero2 = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   const [play, setPlay] = useState(false);
   const [toggle, setToggle] = useState(false);
   const url = play
@@ -14,7 +20,9 @@ const Hero2 = () => {
   return (
     <section
       id="home"
-      className=" flex sm:flex-row flex-col md:items-center md:justify-between xs:items-start xs:justify-center items-start justify-center sm:my-16 my-6 "
+      className={` ${
+        isChecked ? "md:items-start " : "md:items-center"
+      } flex sm:flex-row flex-col  md:justify-between xs:items-start xs:justify-center items-start justify-center sm:my-16 my-6`}
     >
       <div className="flex flex-col flex-1 justify-center sm:items-start xs:items-center items-start sm:mr-10 mr-0 sm:mb-0 mb-10 w-full">
         <Reveal>
@@ -76,24 +84,109 @@ const Hero2 = () => {
             allowfullscreen
           ></iframe>
         </div>
-        <div className="w-full md:flex hidden flex-col justify-end items-end mt-10  transition-all ">
-          <div className="flex flex-col justify-end items-end group">
+        {/* Employment history */}
+        <div className="md:block hidden">
+          <Reveal>
+            <div className="flex flex-row justify-start items-center mt-10">
+              <h3 className="font-semibold text-2xl">Employment history</h3>
+              <div className="ml-5">
+                <label className="flex cursor-pointer select-none items-center">
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={handleCheckboxChange}
+                      className="sr-only"
+                    />
+                    <div
+                      className={`box block h-8 w-14 rounded-full ${
+                        isChecked ? "bg-secondary" : "bg-[#e5e7eb]"
+                      }`}
+                    ></div>
+                    <div
+                      className={`absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
+                        isChecked ? "translate-x-full" : ""
+                      }`}
+                    ></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </Reveal>
+          {isChecked && (
             <Reveal>
-              <Image
-                src={"/images/tenisica0.png"}
-                width={170}
-                height={170}
-                alt="tenisice"
-                className="z-10 hover:opacity-90 "
-              />
-            </Reveal>
+              <div className="my-10 ">
+                {/*<!-- Item #1 --> */}
 
-            <p className="invisible group-hover:visible inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#ef9e78] to-[#f84808] font-semibold ">
-              Nike Pegasus
-            </p>
-          </div>
+                <div class="relative pl-8 sm:pl-32 py-3 group">
+                  {/* <!-- Purple label -->  */}
+
+                  {/*  <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) --> */}
+
+                  <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                      2020
+                    </time>
+
+                    <div class="text-xl font-bold text-slate-900">
+                      Miketa sport centar, Rijeka
+                    </div>
+                  </div>
+
+                  {/*  <!-- Content --> */}
+                  <div class="text-slate-500">
+                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                  </div>
+                </div>
+
+                <div class="relative pl-8 sm:pl-32 py-3 group">
+                  <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                      2021
+                    </time>
+                    <div class="text-xl font-bold text-slate-900">
+                      NK Opatija
+                    </div>
+                  </div>
+                  <div class="text-slate-500">
+                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                  </div>
+                </div>
+
+                <div class="relative pl-8 sm:pl-32 py-3 group">
+                  <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                      2022
+                    </time>
+                    <div class="text-xl font-bold text-slate-900">
+                      HNK Rijeka
+                    </div>
+                  </div>
+                  <div class="text-slate-500">
+                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                  </div>
+                </div>
+
+                <div class="relative pl-8 sm:pl-32 py-3 group">
+                  <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                    <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                      2023
+                    </time>
+                    <div class="text-xl font-bold text-secondary">
+                      Orladno fit gym, Zagreb{" "}
+                    </div>
+                  </div>
+                  <div class="text-slate-500">
+                    Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          )}
         </div>
       </div>
+
+      {/* Rupa cover photo */}
       <div className="flex flex-1 sm:justify-end justify-center w-full sm:mb-0 mb-10">
         <Reveal>
           <Image
@@ -104,20 +197,102 @@ const Hero2 = () => {
             className=""
           />
         </Reveal>
+      </div>
+      {/* Employment history */}
+      <div className="md:hidden block w-full">
+        <Reveal>
+          <div className="flex flex-row justify-center items-center my-10 ">
+            <h3 className="font-semibold text-2xl">Employment history</h3>
+            <div className="ml-5">
+              <label className="flex cursor-pointer select-none items-center">
+                <div className="relative">
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                    className="sr-only"
+                  />
+                  <div
+                    className={`box block h-8 w-14 rounded-full ${
+                      isChecked ? "bg-secondary" : "bg-[#e5e7eb]"
+                    }`}
+                  ></div>
+                  <div
+                    className={`absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
+                      isChecked ? "translate-x-full" : ""
+                    }`}
+                  ></div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </Reveal>
+        {isChecked && (
+          <Reveal>
+            <div className="my-10 ">
+              {/*<!-- Item #1 --> */}
 
-        {/*
-         <div className="relative ">
-          <h3 className="md:text-[150px] text-[120px] absolute md:top-[170px] sm:top-[150px] xs:top-[205px] top-[170px]  md:right-[167px] sm:right-[145px] xs:right-[200px] right-[170px] font-bold z-1  -rotate-90  opacity-50 md:text-black sm:text-green-500 xs:text-blue-200  ">
-            Andrej
-          </h3>
-        </div>{" "}
-        */}
+              <div class="relative pl-8 sm:pl-32 py-3 group">
+                {/* <!-- Purple label -->  */}
 
-        {/*  <div className="relative ">
-          <h3 className="md:text-[150px] sm:text-[100px] text-[100px] absolute -top-[20px] right-[0px] font-bold z-1  opacity-50 ">
-            Andrej
-          </h3>
-        </div>*/}
+                {/*  <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) --> */}
+
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                  <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                    2020
+                  </time>
+
+                  <div class="text-xl font-bold text-slate-900">
+                    Miketa sport centar, Rijeka
+                  </div>
+                </div>
+
+                {/*  <!-- Content --> */}
+                <div class="text-slate-500">
+                  Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                </div>
+              </div>
+
+              <div class="relative pl-8 sm:pl-32 py-3 group">
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                  <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                    2021
+                  </time>
+                  <div class="text-xl font-bold text-slate-900">NK Opatija</div>
+                </div>
+                <div class="text-slate-500">
+                  Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                </div>
+              </div>
+
+              <div class="relative pl-8 sm:pl-32 py-3 group">
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                  <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                    2022
+                  </time>
+                  <div class="text-xl font-bold text-slate-900">HNK Rijeka</div>
+                </div>
+                <div class="text-slate-500">
+                  Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                </div>
+              </div>
+
+              <div class="relative pl-8 sm:pl-32 py-3 group">
+                <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-secondary after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                  <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-secondary bg-secondary/30 rounded-full">
+                    2023
+                  </time>
+                  <div class="text-xl font-bold text-secondary">
+                    Orladno fit gym, Zagreb{" "}
+                  </div>
+                </div>
+                <div class="text-slate-500">
+                  Priprema sportasa, zagrijavanje, oporavak od ozljeda.
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   );
