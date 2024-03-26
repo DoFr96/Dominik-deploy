@@ -1,3 +1,4 @@
+import sliderColor from "@material-tailwind/react/theme/components/slider/sliderColor";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -6,12 +7,13 @@ export const Reveal = ({ children }) => {
   const isInView = useInView(ref, { once: true });
 
   const mainControls = useAnimation();
-
+  const slideControls = useAnimation();
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
+      slideControls.start("visible");
     }
-  }, [isInView, mainControls]);
+  }, [isInView, mainControls, slideControls]);
   return (
     <div ref={ref}>
       <motion.div
