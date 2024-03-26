@@ -12,11 +12,13 @@ import { PiSignIn } from "react-icons/pi";
 import { RiAccountPinBoxLine } from "react-icons/ri";
 import { socialMedia } from "@/constants";
 import { navLinks } from "@/constants";
+
 import {
   AnimatePresence,
   motion,
   useScroll,
   useMotionValueEvent,
+  MotionConfig,
 } from "framer-motion";
 import { navLinksAccount } from "@/constants";
 import { Reveal } from "./Reveal";
@@ -85,6 +87,21 @@ const NavTest3 = () => {
     },
   };
 
+  {
+    /*
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+*/
+  }
+
   return (
     <nav className=" pt-2 flex flex-row justify-between items-center ">
       <div>
@@ -134,6 +151,12 @@ const NavTest3 = () => {
           isOpen ? "overflow-y-hidden" : ""
         } sm:hidden flex flex-1 justify-end items-center`}
       >
+        <div className="  hover:bg-secondary/30 rounded-full ">
+          <AnimatedHamburgerButton />
+        </div>
+
+        {/*
+
         {open ? (
           <IoCloseOutline
             className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack z-10 "
@@ -145,6 +168,7 @@ const NavTest3 = () => {
             onClick={toggleMenu}
           />
         )}
+*/}
 
         <AnimatePresence>
           {open && (
@@ -236,3 +260,99 @@ const NavTest3 = () => {
 };
 
 export default NavTest3;
+
+export const AnimatedHamburgerButton = () => {
+  const [active, setActive] = useState(false);
+
+  return (
+    <MotionConfig
+      transition={{
+        duration: 0.5,
+
+        ease: "easeInOut",
+      }}
+    >
+      <motion.button
+        initial={false}
+        animate={active ? "open" : "closed"}
+        onClick={() => setActive((pv) => !pv)}
+        className="relative h-14 w-14 rounded-full "
+      >
+        {/* top bar */}
+        <motion.span
+          variants={{
+            open: {
+              rotate: ["0deg", "0deg", "45deg"],
+              top: ["35%", "50%", "50%"],
+            },
+            closed: {
+              rotate: ["45deg", "0deg", "0deg"],
+              top: ["50%", "50%", "35%"],
+            },
+          }}
+          className="absolute h-1 w-8 bg-secondary"
+          style={{ left: "50%", top: "35%", x: "-50%", y: "-50%" }}
+        />
+        {/* middle bar */}
+        <motion.span
+          variants={{
+            open: {
+              rotate: ["0deg", "0deg", "-45deg"],
+            },
+            closed: {
+              rotate: ["-45deg", "0deg", "0deg"],
+            },
+          }}
+          className="absolute h-1 w-8 bg-secondary"
+          style={{ left: "50%", top: "50%", x: "-50%", y: "-50%" }}
+        />
+        {/* bottom bar */}
+        <motion.span
+          variants={{
+            open: {
+              rotate: ["0deg", "0deg", "45deg"],
+              left: "50.5%",
+              bottom: ["35%", "50%", "54%"],
+            },
+            closed: {
+              rotate: ["45deg", "0deg", "0deg"],
+              left: "calc(50% + 10px)",
+              bottom: ["54%", "50%", "35%"],
+            },
+          }}
+          className="absolute h-1 w-4 bg-secondary"
+          style={{
+            left: "calc(50% + 10px)",
+            bottom: "35%",
+            x: "-65%",
+            y: "50%",
+          }}
+        />
+      </motion.button>
+    </MotionConfig>
+  );
+};
+
+{
+  /* <motion.span
+          variants={{
+            open: {
+              rotate: ["0deg", "0deg", "45deg"],
+              left: "50.5%",
+              bottom: ["35%", "50%", "54%"],
+            },
+            closed: {
+              rotate: ["45deg", "0deg", "0deg"],
+              left: "calc(50% + 10px)",
+              bottom: ["54%", "50%", "35%"],
+            },
+          }}
+          className="absolute h-1 w-4 bg-secondary"
+          style={{
+            left: "calc(50% + 10px)",
+            bottom: "35%",
+            x: "-65%",
+            y: "50%",
+          }}
+        />{" "} */
+}

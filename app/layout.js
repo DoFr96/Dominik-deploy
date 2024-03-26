@@ -1,7 +1,7 @@
 import { Roboto } from "next/font/google";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import NavTest4 from "@/components/NavTest4";
+import NavTest3 from "@/components/NavTest3";
 import Footer from "@/components/Footer";
 
 const roboto = Roboto({
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <body className={`${urbanist.className}`}>
         <main className={` sm:max-w-[1280px] mx-auto  overflow-hidden `}>
           <div className="w-full sm:px-16 px-6">
-            <NavTest4 />
+            <NavTest3 />
             {children}
             <Footer />
           </div>
