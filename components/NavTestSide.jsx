@@ -22,13 +22,18 @@ import {
 } from "framer-motion";
 import { navLinksAccount } from "@/constants";
 import { Reveal } from "./Reveal";
-const NavTest3 = () => {
+const NavTestSide = () => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
-  };
 
-  const [isOpen, setIsOpen] = useState(false);
+    if (!open) {
+      document.querySelector("body").classList.add("overflow-hidden");
+    }
+    if (open) {
+      document.querySelector("body").classList.remove("overflow-hidden");
+    }
+  };
 
   {
     /* Animation section is this */
@@ -110,20 +115,28 @@ const NavTest3 = () => {
         </Reveal>
       </div>{" "}
       <Reveal>
-        <div className="sm:flex hidden flex-row flex-1 justify-end items-center gap-20 font-medium text-[18px]">
-          <div className="flex gap-4  ">
-            <Link href="#" className="hover:text-black/30">
-              Home
-            </Link>
-            <Link href="#program" className="hover:text-black/30">
-              Program
-            </Link>
-            <Link href="#pricing" className="hover:text-black/30">
-              Pricing
-            </Link>
-            <Link href="/#contact" className="hover:text-black/30">
-              Contact
-            </Link>
+        <div className="sm:flex hidden flex-row flex-1 justify-end items-center gap-20 font-medium ">
+          <div className="flex gap-5 text-[20px]  ">
+            {/* navigation on desktop mode */}
+            {navLinks.map((link, index) => {
+              const { title, href } = link;
+              return (
+                <motion.div
+                  whileHover={{
+                    scale: 1.1,
+                    originX: 0,
+                  }}
+                  whileTap={{ scale: 0.8 }}
+                  transition={{ type: "tween" }}
+                  className=""
+                  key={index}
+                >
+                  <Link href={href} className="hover:text-black/30">
+                    {title}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
           <div className="flex gap-4">
             <Link
@@ -146,32 +159,13 @@ const NavTest3 = () => {
       {/* here is menu for mobile phone */}
       {/* here is menu for mobile phone */}
       {/* here is menu for mobile phone */}
-      <div
-        className={`${
-          isOpen ? "overflow-y-hidden" : ""
-        } sm:hidden flex flex-1 justify-end items-center`}
-      >
+      <div className={`  sm:hidden flex flex-1 justify-end items-center`}>
         <div
-          className="  hover:bg-secondary/30 rounded-full  "
+          className="  hover:bg-secondary/30 rounded-full z-[999]  "
           onClick={toggleMenu}
         >
           <AnimatedHamburgerButton />
         </div>
-
-        {/*
-
-        {open ? (
-          <IoCloseOutline
-            className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack z-10 "
-            onClick={toggleMenu}
-          />
-        ) : (
-          <HiBars3BottomRight
-            className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack   z-10 "
-            onClick={toggleMenu}
-          />
-        )}
-*/}
 
         <AnimatePresence>
           {open && (
@@ -180,16 +174,17 @@ const NavTest3 = () => {
               initial="initial"
               animate="animate"
               exit="exit"
-              className={` bg-secondary  fixed left-0 top-0 w-full h-screen origin-top text-black p-10 `}
+              className={` bg-white  fixed right-0 top-0 w-full h-screen origin-top text-black p-10 z-[998] `}
             >
-              <div className="flex flex-col justify-center items-center h-full  font-medium text-white text-[22px]">
+              <div className="flex flex-col justify-center items-center h-full ">
                 <motion.div
                   variants={containerVars}
                   initial="initial"
                   animate="open"
                   exit="initial"
-                  className="flex flex-col justify-center gap-3 font-semibold text-white "
+                  className="flex flex-col justify-center gap-3 font-medium text-[25px] text-black "
                 >
+                  {/*  links for mobile navbar */}
                   {navLinks.map((link, index) => {
                     const { title, href, icon } = link;
                     return (
@@ -200,17 +195,31 @@ const NavTest3 = () => {
                       >
                         <Link
                           href={href}
-                          className="hover:text-dimWhite  flex flex-row justify-start items-center gap-2"
+                          className="  flex flex-row justify-start items-center gap-2"
                         >
                           {" "}
-                          <span>{icon}</span>
-                          {title}
+                          <span className=" text-secondary">{icon}</span>
+                          <motion.span
+                            whileHover={{
+                              scale: 1.1,
+                              originX: 0,
+                            }}
+                            whileTap={{ scale: 0.8 }}
+                            transition={{ type: "tween" }}
+                          >
+                            {" "}
+                            {title}
+                          </motion.span>{" "}
                         </Link>
                       </motion.div>
                     );
                   })}
 
-                  <motion.hr variants={mobileLinkVars} className="" />
+                  <motion.hr
+                    variants={mobileLinkVars}
+                    className="h-[2.5px] bg-secondary"
+                  />
+                  {/* login register links for mobile navbar */}
                   {navLinksAccount.map((link, index) => {
                     const { title, href, icon } = link;
                     return (
@@ -221,34 +230,46 @@ const NavTest3 = () => {
                       >
                         <Link
                           href={href}
-                          className="hover:text-dimWhite flex flex-row justify-start items-center gap-2"
+                          className=" flex flex-row group transition-all   justify-start items-center gap-2"
                         >
-                          {" "}
-                          <span>{icon}</span>
-                          {title}
+                          <span className="text-secondary">{icon}</span>
+                          <motion.span
+                            whileHover={{
+                              scale: 1.1,
+                              originX: 0,
+                            }}
+                            whileTap={{ scale: 0.8 }}
+                            transition={{ type: "tween" }}
+                            className=""
+                          >
+                            {title}
+                          </motion.span>
                         </Link>
                       </motion.div>
                     );
                   })}
-                  <motion.hr variants={mobileLinkVars} className="" />
-                  <div className="flex flex-row md:mt-0 mt-6">
+                  <motion.hr
+                    variants={mobileLinkVars}
+                    className="h-[2.5px] bg-secondary"
+                  />
+                  {/* social media links for mobile navbar */}
+                  <div className="flex flex-row justify-center items-center md:mt-0 mt-4">
                     {socialMedia.map((social, index) => (
                       <motion.div
                         key={index}
                         variants={mobileLinkVars}
-                        className="overflow-hidden"
+                        whileHover={{
+                          scale: 1.1,
+                          originX: 0,
+                        }}
+                        whileTap={{ scale: 0.8 }}
+                        transition={{ type: "tween" }}
+                        className={` object-contain cursor-pointer  hover:opacity-70 overflow-hidden  ${
+                          index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+                        }`}
+                        onClick={() => window.open(social.link)}
                       >
-                        <Image
-                          key={social.id}
-                          src={social.icon}
-                          alt={social.id}
-                          width={25}
-                          height={25}
-                          className={` object-contain cursor-pointer hover:opacity-70 ${
-                            index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-                          }`}
-                          onClick={() => window.open(social.link)}
-                        />
+                        {social.icon}
                       </motion.div>
                     ))}
                   </div>
@@ -262,7 +283,7 @@ const NavTest3 = () => {
   );
 };
 
-export default NavTest3;
+export default NavTestSide;
 
 export const AnimatedHamburgerButton = () => {
   const [active, setActive] = useState(false);
@@ -358,4 +379,37 @@ export const AnimatedHamburgerButton = () => {
             y: "50%",
           }}
         />{" "} */
+}
+
+{
+  /*
+<Image
+                          key={social.id}
+                          src={social.icon}
+                          alt={social.id}
+                          width={25}
+                          height={25}
+                          className={` object-contain cursor-pointer text-secondary hover:opacity-70 ${
+                            index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+                          }`}
+                          onClick={() => window.open(social.link)}
+                        />
+*/
+}
+
+{
+  /*
+
+        {open ? (
+          <IoCloseOutline
+            className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack z-10 "
+            onClick={toggleMenu}
+          />
+        ) : (
+          <HiBars3BottomRight
+            className="w-[30px] h-[30px] cursor-pointer overflow-hidden hover:text-dimBlack   z-10 "
+            onClick={toggleMenu}
+          />
+        )}
+*/
 }

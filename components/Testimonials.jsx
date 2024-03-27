@@ -2,6 +2,7 @@
 import React from "react";
 import Testimonial from "./Testimonial";
 import { Reveal } from "./Reveal";
+import Image from "next/image";
 const Testimonials = () => {
   return (
     <section className="flex sm:flex-row flex-col justify-between items-center sm:px-16 py-6 sm:mt-0 mt-10">

@@ -32,13 +32,14 @@ const Testimonial = () => {
                 isVisible === i ? "flex" : "hidden"
               } p-8 bg-dimBlack rounded-md flex-col hover:shadow-md `}
             >
-              <div className="flex flex-row mb-2 text-yellow-400">{stars}</div>
-
+              {" "}
+              <div className="flex flex-row mb-2 text-yellow-400 ">{stars}</div>
               <p className="mb-1 text-white">{review}</p>
               {/* Person who left the review */}
               <div className="flex flex-row items-center justify-between  mt-5">
                 {/* Left side */}
                 <div className="flex flex-row justify-start items-center space-x-3">
+                  <div className="relative"></div>
                   <Image
                     src={img}
                     alt={`image`}
@@ -62,7 +63,7 @@ const Testimonial = () => {
               </div>
             </div>
           );
-        })}
+        })}{" "}
       </Reveal>
     </>
   );

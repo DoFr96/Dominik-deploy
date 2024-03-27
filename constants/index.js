@@ -8,6 +8,10 @@ import { GoPeople } from "react-icons/go";
 import { PiSignIn } from "react-icons/pi";
 import { RiAccountPinBoxLine } from "react-icons/ri";
 
+import { IoLogoInstagram } from "react-icons/io";
+import { FaYoutube } from "react-icons/fa6";
+import { BsTiktok } from "react-icons/bs";
+
 export const programs = [
   {
     id: "cardio",
@@ -182,18 +186,18 @@ export const contact = [
 export const socialMedia = [
   {
     id: "instagram",
-    icon: "/icons/instagram.svg",
+    icon: <IoLogoInstagram size={30} style={{ fill: "black" }} />,
     link: "https://www.instagram.com/",
   },
   {
     id: "facebook",
-    icon: "/icons/facebook.svg",
-    link: "https://www.facebook.com/",
+    icon: <BsTiktok size={30} style={{ fill: "black" }} />,
+    link: "https://www.tiktok.com/",
   },
   {
     id: "twitter",
-    icon: "/icons/twitter.svg",
-    link: "https://www.twitter.com/",
+    icon: <FaYoutube size={30} style={{ fill: "red" }} />,
+    link: "https://www.youtube.com/",
   },
 ];
 

@@ -10,7 +10,7 @@ import Shoes from "@/components/Shoes";
 import Contact from "@/components/Contact";
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Hero2 />
       <Program3 />
       <Transform2 />

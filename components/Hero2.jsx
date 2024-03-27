@@ -85,7 +85,7 @@ const Hero2 = () => {
           ></iframe>
         </div>
         {/* Employment history */}
-        <div className="md:block hidden">
+        <div className="sm:block hidden">
           <Reveal>
             <div className="flex flex-row justify-start items-center mt-10">
               <h3 className="font-semibold text-[20px]">Employment history</h3>
@@ -214,7 +214,7 @@ const Hero2 = () => {
         </Reveal>
       </div>
       {/* Employment history */}
-      <div className="md:hidden block w-full">
+      <div className="sm:hidden block w-full">
         <Reveal>
           <div className="flex flex-row justify-center items-center my-10 ">
             <h3 className="font-semibold text-2xl ">Employment history</h3>
