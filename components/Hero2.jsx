@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "./Reveal";
+import { AnimatePresence, motion } from "framer-motion";
+import { IoIosPlayCircle } from "react-icons/io";
 
 const Hero2 = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -55,19 +57,25 @@ const Hero2 = () => {
           <Reveal>
             {" "}
             <button
-              className="flex flex-row justify-center items-center hover:text-secondary "
+              className="flex flex-row justify-center items-center  "
               onClick={() => {
                 setPlay(true), setToggle(!toggle);
               }}
             >
-              <Image
-                src={"/icons/play-circle.svg"}
-                alt="play"
-                width={30}
-                height={30}
-                className="mr-1"
-              />
-              Watch Demo
+              <span className="mr-1">
+                {<IoIosPlayCircle className="" size={27} />}
+              </span>
+              <motion.span
+                whileHover={{
+                  scale: 1.1,
+                  originX: 0,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ type: "tween" }}
+                className="hover:text-secondary"
+              >
+                Watch Demo
+              </motion.span>
             </button>{" "}
           </Reveal>
         </div>

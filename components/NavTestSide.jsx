@@ -62,14 +62,14 @@ const NavTestSide = () => {
   const containerVars = {
     initial: {
       transition: {
-        staggerChildren: 0.09,
+        staggerChildren: 0.05,
         staggerDirection: -1,
       },
     },
     open: {
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.09,
+        staggerChildren: 0.05,
         staggerDirection: 1,
       },
     },
@@ -176,7 +176,7 @@ const NavTestSide = () => {
               exit="exit"
               className={` bg-white  fixed right-0 top-0 w-full h-screen origin-top text-black p-10 z-[998] `}
             >
-              <div className="flex flex-col justify-center items-center h-full ">
+              <div className="flex flex-col justify-center items-center -mt-20 h-full ">
                 <motion.div
                   variants={containerVars}
                   initial="initial"
@@ -196,6 +196,9 @@ const NavTestSide = () => {
                         <Link
                           href={href}
                           className="  flex flex-row justify-start items-center gap-2"
+                          onClick={() => {
+                            toggleMenu(), setActivated(!activated);
+                          }}
                         >
                           {" "}
                           <span className=" text-secondary">{icon}</span>
@@ -286,7 +289,7 @@ const NavTestSide = () => {
 export default NavTestSide;
 
 export const AnimatedHamburgerButton = () => {
-  const [active, setActive] = useState(false);
+  const [activated, setActivated] = useState(false);
 
   return (
     <MotionConfig
@@ -298,8 +301,8 @@ export const AnimatedHamburgerButton = () => {
     >
       <motion.button
         initial={false}
-        animate={active ? "open" : "closed"}
-        onClick={() => setActive((pv) => !pv)}
+        animate={activated ? "open" : "closed"}
+        onClick={() => setActivated((pv) => !pv)}
         className="relative h-14 w-14 rounded-full "
       >
         {/* top bar */}
