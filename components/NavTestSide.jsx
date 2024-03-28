@@ -133,7 +133,7 @@ const NavTestSide = () => {
                 >
                   <Link
                     href={href}
-                    shallow={true}
+                    scroll={false}
                     className="hover:text-black/30"
                   >
                     {title}
@@ -200,6 +200,7 @@ const NavTestSide = () => {
                         {/*  once clicked rerenders toggle so it closes down navbar */}
                         <Link
                           href={href}
+                          scroll={false}
                           className="  flex flex-row justify-start items-center gap-2"
                           onClick={() => {
                             toggleMenu();
