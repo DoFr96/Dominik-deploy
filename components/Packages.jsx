@@ -5,7 +5,7 @@ import { Reveal } from "./Reveal";
 
 const Packages = () => {
   return (
-    <section id="pricing" className="sm:py-16 py-6">
+    <section id="package" className="sm:py-16 py-6">
       <div className="flex flex-col justify-center items-center">
         <Reveal>
           <p className="text-secondary mb-1">Pricing</p>

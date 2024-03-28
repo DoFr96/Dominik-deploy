@@ -131,7 +131,11 @@ const NavTestSide = () => {
                   className=""
                   key={index}
                 >
-                  <Link href={href} className="hover:text-black/30">
+                  <Link
+                    href={href}
+                    shallow={true}
+                    className="hover:text-black/30"
+                  >
                     {title}
                   </Link>
                 </motion.div>
@@ -164,7 +168,7 @@ const NavTestSide = () => {
           className="  hover:bg-secondary/30 rounded-full z-[999]  "
           onClick={toggleMenu}
         >
-          <AnimatedHamburgerButton />
+          <AnimatedHamburgerButton open={open} />
         </div>
 
         <AnimatePresence>
@@ -193,11 +197,12 @@ const NavTestSide = () => {
                         key={index}
                         className="overflow-hidden"
                       >
+                        {/*  once clicked rerenders toggle so it closes down navbar */}
                         <Link
                           href={href}
                           className="  flex flex-row justify-start items-center gap-2"
                           onClick={() => {
-                            toggleMenu(), setActivated(!activated);
+                            toggleMenu();
                           }}
                         >
                           {" "}
@@ -244,6 +249,9 @@ const NavTestSide = () => {
                             whileTap={{ scale: 0.8 }}
                             transition={{ type: "tween" }}
                             className=""
+                            onClick={() => {
+                              toggleMenu();
+                            }}
                           >
                             {title}
                           </motion.span>
@@ -288,9 +296,16 @@ const NavTestSide = () => {
 
 export default NavTestSide;
 
-export const AnimatedHamburgerButton = () => {
+export const AnimatedHamburgerButton = ({ open }) => {
   const [activated, setActivated] = useState(false);
 
+  useEffect(() => {
+    if (open === false) {
+      setActivated(false);
+    }
+  }, [open]);
+
+  console.log(open);
   return (
     <MotionConfig
       transition={{
