@@ -23,12 +23,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${urbanist.className}`}>
-        <main className={` sm:max-w-[1280px] mx-auto  overflow-hidden `}>
-          <div className="w-full sm:px-16 px-6">
+        <main
+          className={` sm:max-w-[1280px] mx-auto  overflow-hidden min-h-screen flex flex-col justify-between `}
+        >
+          <div className="w-full sm:px-16 px-6 flex-grow">
             <NavTestSide />
             {children}
-            <Footer />
           </div>
+          <Footer />
         </main>
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Reveal } from "./Reveal";
+import Link from "next/link";
 const JoinUs = () => {
   return (
     <Reveal>
@@ -13,7 +14,9 @@ const JoinUs = () => {
             </h4>
           </div>
           <div className="flex sm:justify-end justify-center items-center sm:w-[30%] w-[100%] ">
-            <button className="main_btn">Join Us</button>
+            <Link href={"/register"}>
+              <button className="main_btn">Join Us</button>
+            </Link>
           </div>
         </div>
       </section>

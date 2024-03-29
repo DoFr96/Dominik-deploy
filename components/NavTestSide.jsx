@@ -111,7 +111,9 @@ const NavTestSide = () => {
     <nav className=" pt-2 flex flex-row justify-between items-center ">
       <div>
         <Reveal>
-          <Image src="/images/logo.png" alt="logo" width={50} height={50} />
+          <Link href={"/"}>
+            <Image src="/images/logo.png" alt="logo" width={50} height={50} />
+          </Link>
         </Reveal>
       </div>{" "}
       <Reveal>
@@ -131,11 +133,7 @@ const NavTestSide = () => {
                   className=""
                   key={index}
                 >
-                  <Link
-                    href={href}
-                    scroll={false}
-                    className="hover:text-black/30"
-                  >
+                  <Link href={href} className="hover:text-black/30">
                     {title}
                   </Link>
                 </motion.div>
@@ -200,7 +198,6 @@ const NavTestSide = () => {
                         {/*  once clicked rerenders toggle so it closes down navbar */}
                         <Link
                           href={href}
-                          scroll={false}
                           className="  flex flex-row justify-start items-center gap-2"
                           onClick={() => {
                             toggleMenu();

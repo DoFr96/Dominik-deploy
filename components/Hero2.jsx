@@ -50,9 +50,11 @@ const Hero2 = () => {
 
         <div className="flex flex-row justify-start items-center gap-5">
           <Reveal>
-            <button className="main_btn " href="/">
-              Start Training
-            </button>
+            <Link href={"/register"}>
+              <button className="main_btn " href="/">
+                Start Training
+              </button>
+            </Link>
           </Reveal>
           <Reveal>
             {" "}
