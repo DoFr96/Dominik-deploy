@@ -203,9 +203,9 @@ export const socialMedia = [
 
 export const navLinks = [
   { title: "Home", href: "/", icon: <IoHomeOutline /> },
-  { title: "Program", href: "/#program", icon: <GrCatalog /> },
-  { title: "Pricing", href: "/#package", icon: <IoPricetagOutline /> },
-  { title: "Contact", href: "/#contact", icon: <GoPeople /> },
+  { title: "Program", href: "#program", icon: <GrCatalog /> },
+  { title: "Pricing", href: "#package", icon: <IoPricetagOutline /> },
+  { title: "Contact", href: "#contact", icon: <GoPeople /> },
 ];
 
 export const navLinksAccount = [
