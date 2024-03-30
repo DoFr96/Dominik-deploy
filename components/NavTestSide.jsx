@@ -133,9 +133,9 @@ const NavTestSide = () => {
                   className=""
                   key={index}
                 >
-                  <Link href={href} className="hover:text-black/30">
+                  <a href={href} className="hover:text-black/30">
                     {title}
-                  </Link>
+                  </a>
                 </motion.div>
               );
             })}
@@ -196,7 +196,7 @@ const NavTestSide = () => {
                         className="overflow-hidden"
                       >
                         {/*  once clicked rerenders toggle so it closes down navbar */}
-                        <Link
+                        <a
                           href={href}
                           className="  flex flex-row justify-start items-center gap-2"
                           onClick={() => {
@@ -216,7 +216,7 @@ const NavTestSide = () => {
                             {" "}
                             {title}
                           </motion.span>{" "}
-                        </Link>
+                        </a>
                       </motion.div>
                     );
                   })}
