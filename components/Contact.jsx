@@ -2,26 +2,41 @@
 import { contact } from "@/constants";
 import Image from "next/image";
 import { Reveal } from "./Reveal";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [stateMessage, setStateMessage] = useState(null);
+
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log(process.env.SERVICE_ID);
 
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-        publicKey: "YOUR_PUBLIC_KEY",
+      .sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, {
+        publicKey: process.env.PUBLIC_KEY,
       })
       .then(
-        () => {
-          console.log("SUCCESS!");
+        (result) => {
+          setStateMessage("Message sent!");
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000); // hide message after 5 seconds
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          setStateMessage("Something went wrong, please try again later");
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000); // hide message after 5 seconds
         }
       );
+
+    // Clears the form after sending the email
+    e.target.reset();
   };
 
   return (
@@ -81,6 +96,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    name="user_email"
                     class="shadow-sm  border text-black
               text-sm  
               block w-full p-2.5 bg-sea border-dimWhite placeholder-dimWhtext-dimWhite
@@ -100,6 +116,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="user_subject"
                     id="subject"
                     class="shadow-sm border text-black
               text-sm  
@@ -114,6 +131,7 @@ const Contact = () => {
                 <div class="sm:col-span-2">
                   <label
                     for="message"
+                    name="user_message"
                     class="block mb-2 text-sm font-medium text-white "
                   >
                     Your message
@@ -130,7 +148,6 @@ const Contact = () => {
               <Reveal>
                 <button
                   type="submit"
-                  value="Send"
                   class="py-3 px-5 text-sm font-bold text-center text-white 
           
             border-solid border-[1px] border-[#ffffff] cursor-pointer
@@ -138,6 +155,9 @@ const Contact = () => {
                 >
                   Send message
                 </button>
+                {stateMessage && (
+                  <p className="my-2 text-dimWhite">{stateMessage}</p>
+                )}
               </Reveal>
             </form>
           </div>
