@@ -17,9 +17,6 @@ const urbanist = Urbanist({
 export const metadata = {
   title: "Andrej Rupnik",
   description: "Personal trainer",
-  icons: {
-    icon: "/icon.png",
-  },
 };
 
 export default function RootLayout({ children }) {
