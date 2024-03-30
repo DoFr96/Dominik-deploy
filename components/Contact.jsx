@@ -2,7 +2,28 @@
 import { contact } from "@/constants";
 import Image from "next/image";
 import { Reveal } from "./Reveal";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
+        publicKey: "YOUR_PUBLIC_KEY",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
@@ -48,7 +69,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full">
-            <form action="#" class="space-y-8">
+            <form ref={form} onSubmit={sendEmail} class="space-y-8">
               <Reveal>
                 <div>
                   <label
@@ -109,6 +130,7 @@ const Contact = () => {
               <Reveal>
                 <button
                   type="submit"
+                  value="Send"
                   class="py-3 px-5 text-sm font-bold text-center text-white 
           
             border-solid border-[1px] border-[#ffffff] cursor-pointer
